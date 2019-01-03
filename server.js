@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
-const scraper = require('./scraper');
+const listFiles = require('./list-files');
 
-app.get('/scrape', scraper);
+app.get('/list-files', listFiles);
 
-app.listen('1984', function() {
+app.listen('1984', () => {
 
     console.log('listen on port 1984');
 

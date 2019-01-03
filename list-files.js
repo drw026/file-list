@@ -3,7 +3,8 @@ const list = require('list-contents');
 /**
  * remove all non 'qunit.html' files
  * 
- * @param String file 
+ * @param {String} file
+ * @returns {*}
  */
 function filterQunit(file) {
 
@@ -14,7 +15,8 @@ function filterQunit(file) {
 /**
  * format the object
  * 
- * @param {String} file 
+ * @param {String} file
+ * @returns {Object} - the 
  */
 function createObject(file) {
 
@@ -29,7 +31,8 @@ function createObject(file) {
  * sort array by name
  * 
  * @param {String} a 
- * @param {String} b 
+ * @param {String} b
+ * @returns {Number} 
  */
 function sortByName(a, b) {
 
@@ -42,10 +45,10 @@ function sortByName(a, b) {
 
 }
 
-module.exports = function(req, responds) {
+module.exports = (req, responds) => {
 
     // get all files and format it before return
-    list('./files', function(output) {
+    list('./files', (output) => {
 
         const data = output.files;
 
@@ -55,4 +58,4 @@ module.exports = function(req, responds) {
 
     });
 
-};
+}
